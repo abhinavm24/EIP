@@ -1,5 +1,8 @@
 # Assignment 1
 Change the model in such a way that after executing the code below, your accuracy print out is more than 99.0
+
+Notebook url : https://github.com/abhinavm24/EIP/blob/master/week1/assignment1/1st_DNN.ipynb
+Colab url : https://colab.research.google.com/github/abhinavm24/EIP/blob/master/week1/assignment1/1st_DNN.ipynb
     
     model.fit(X_train, Y_train, validation_data=(X_test, Y_test), batch_size=64, nb_epoch=10, verbose=1)
 
