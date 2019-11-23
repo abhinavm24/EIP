@@ -15,8 +15,8 @@ In the ReadMe file:
     strategy you have taken to achieve the said results  
 
 
-Notebook url: https://github.com/abhinavm24/EIP/blob/master/week2/assignment2/EIGHTH-assignment.ipynb
-Colab url: https://colab.research.google.com/github/abhinavm24/EIP/blob/master/week2/assignment2/EIGHTH-assignment.ipynb
+Notebook url: https://github.com/abhinavm24/EIP/blob/master/week2/assignment2/EIGHTH-assignment.ipynb  
+Colab url: https://colab.research.google.com/github/abhinavm24/EIP/blob/master/week2/assignment2/EIGHTH-assignment.ipynb  
 
 
 ## Architecture
