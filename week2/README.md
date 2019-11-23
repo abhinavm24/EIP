@@ -65,6 +65,63 @@ Colab url: https://colab.research.google.com/github/abhinavm24/EIP/blob/master/w
 
 
     model.summary()
+    
+    _________________________________________________________________
+    Layer (type)                 Output Shape              Param #   
+    =================================================================
+    conv2d_1 (Conv2D)            (None, 26, 26, 10)        90        
+    _________________________________________________________________
+    batch_normalization_1 (Batch (None, 26, 26, 10)        40        
+    _________________________________________________________________
+    dropout_1 (Dropout)          (None, 26, 26, 10)        0         
+    _________________________________________________________________
+    conv2d_2 (Conv2D)            (None, 24, 24, 15)        1350      
+    _________________________________________________________________
+    batch_normalization_2 (Batch (None, 24, 24, 15)        60        
+    _________________________________________________________________
+    dropout_2 (Dropout)          (None, 24, 24, 15)        0         
+    _________________________________________________________________
+    conv2d_3 (Conv2D)            (None, 24, 24, 10)        150       
+    _________________________________________________________________
+    max_pooling2d_1 (MaxPooling2 (None, 12, 12, 10)        0         
+    _________________________________________________________________
+    conv2d_4 (Conv2D)            (None, 10, 10, 15)        1350      
+    _________________________________________________________________
+    batch_normalization_3 (Batch (None, 10, 10, 15)        60        
+    _________________________________________________________________
+    dropout_3 (Dropout)          (None, 10, 10, 15)        0         
+    _________________________________________________________________
+    conv2d_5 (Conv2D)            (None, 8, 8, 15)          2025      
+    _________________________________________________________________
+    batch_normalization_4 (Batch (None, 8, 8, 15)          60        
+    _________________________________________________________________
+    dropout_4 (Dropout)          (None, 8, 8, 15)          0         
+    _________________________________________________________________
+    conv2d_6 (Conv2D)            (None, 6, 6, 15)          2025      
+    _________________________________________________________________
+    batch_normalization_5 (Batch (None, 6, 6, 15)          60        
+    _________________________________________________________________
+    dropout_5 (Dropout)          (None, 6, 6, 15)          0         
+    _________________________________________________________________
+    conv2d_7 (Conv2D)            (None, 4, 4, 15)          2025      
+    _________________________________________________________________
+    batch_normalization_6 (Batch (None, 4, 4, 15)          60        
+    _________________________________________________________________
+    dropout_6 (Dropout)          (None, 4, 4, 15)          0         
+    _________________________________________________________________
+    conv2d_8 (Conv2D)            (None, 1, 1, 10)          2400      
+    _________________________________________________________________
+    batch_normalization_7 (Batch (None, 1, 1, 10)          40        
+    _________________________________________________________________
+    dropout_7 (Dropout)          (None, 1, 1, 10)          0         
+    _________________________________________________________________
+    flatten_1 (Flatten)          (None, 10)                0         
+    _________________________________________________________________
+    activation_1 (Activation)    (None, 10)                0         
+    =================================================================
+    Total params: 11,795
+    Trainable params: 11,605
+    Non-trainable params: 190
 
 ## Training
 
@@ -169,14 +226,15 @@ Colab url: https://colab.research.google.com/github/abhinavm24/EIP/blob/master/w
 
 ## Strategy
 As the code evolved through 8 iterations, I could learn the importance of max-pooling, dropout etc.
-After removing bias from all layers, I could easily go beyond 99.4 mark with little more than 16k params. So, I made a choice to reduce the no of output channels of the convolution blocks, since mnist is a easy dataset, probably we don't need so many channel after each layer.
+
+After removing bias from all layers, I could easily go beyond 99.4 mark with little more than 16k params. So, I made a choice to reduce the no. of output channels of the convolution blocks, since MNIST is a easy dataset, probably we don't need so many channel after each layer. With little less than 12k params, I could still reach 99.4 in 20 epochs.
 
 
-[code 1](https://tinyurl.com/yyhddxw5) - basic cnn based model for mnist
-[code 2](https://tinyurl.com/y248vr36) - max pooling after 3 convolution layers
-[code 3](https://tinyurl.com/yyv4md9y) - param reduction by reducing number of filters
-[code 4](https://tinyurl.com/y65qk93c) - Batch normalization standaradizes the inputs, more cnn blocks
-[code 5](https://tinyurl.com/y2qacq7u) - increase no. of output channels for convolutions
-[code 6](https://tinyurl.com/yyfxyozm) - regularization using dropout
-[code 7](https://tinyurl.com/y2omp9s3) - learning rate scheduler
-[code 8](https://tinyurl.com/y494cv85) - dropout after every convolution layer
+[code 1](https://tinyurl.com/yyhddxw5) - basic cnn based model for mnist. 
+[code 2](https://tinyurl.com/y248vr36) - max pooling after 3 convolution layers 
+[code 3](https://tinyurl.com/yyv4md9y) - param reduction by reducing number of filters   
+[code 4](https://tinyurl.com/y65qk93c) - Batch normalization standaradizes the inputs, more cnn blocks  
+[code 5](https://tinyurl.com/y2qacq7u) - increase no. of output channels for convolutions  
+[code 6](https://tinyurl.com/yyfxyozm) - regularization using dropout  
+[code 7](https://tinyurl.com/y2omp9s3) - learning rate scheduler  
+[code 8](https://tinyurl.com/y494cv85) - dropout after every convolution layer  
