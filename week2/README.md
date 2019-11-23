@@ -1,18 +1,18 @@
 # Assignment 1
-Write the CODE9 file to achieve:
-    99.4% accuracy
-    in 15k parameters
-    within 20 Epochs
+Write the CODE9 file to achieve:  
+    99.4% accuracy  
+    in 15k parameters  
+    within 20 Epochs  
+    
+You are not allowed to use:  
+    Fully connected layer to convert any 2D channel to 1D channel  
+    Use biases  
 
-You are not allowed to use:
-    Fully connected layer to convert any 2D channel to 1D channel
-    Use biases
-
-Submit your GitHub link with a ReadMe.md file
-In the ReadMe file:
-    copy and paste your Logs for 20 epochs
-    copy and paste the result of your model.evaluate (on test data)
-    strategy you have taken to achieve the said results
+Submit your GitHub link with a ReadMe.md file  
+In the ReadMe file:  
+    copy and paste your Logs for 20 epochs  
+    copy and paste the result of your model.evaluate (on test data)  
+    strategy you have taken to achieve the said results  
 
 
 Notebook url: https://github.com/abhinavm24/EIP/blob/master/week2/assignment2/EIGHTH-assignment.ipynb
