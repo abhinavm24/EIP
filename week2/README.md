@@ -230,9 +230,9 @@ As the code evolved through 8 iterations, I could learn the importance of max-po
 After removing bias from all layers, I could easily go beyond 99.4 mark with little more than 16k params. So, I made a choice to reduce the no. of output channels of the convolution blocks, since MNIST is a easy dataset, probably we don't need so many channel after each layer. With little less than 12k params, I could still reach 99.4 in 20 epochs.
 
 
-[code 1](https://tinyurl.com/yyhddxw5) - basic cnn based model for mnist. 
-[code 2](https://tinyurl.com/y248vr36) - max pooling after 3 convolution layers 
-[code 3](https://tinyurl.com/yyv4md9y) - param reduction by reducing number of filters   
+[code 1](https://tinyurl.com/yyhddxw5) - basic cnn based model for mnist  
+[code 2](https://tinyurl.com/y248vr36) - max pooling after 3 convolution layers  
+[code 3](https://tinyurl.com/yyv4md9y) - param reduction by reducing number of filters  
 [code 4](https://tinyurl.com/y65qk93c) - Batch normalization standaradizes the inputs, more cnn blocks  
 [code 5](https://tinyurl.com/y2qacq7u) - increase no. of output channels for convolutions  
 [code 6](https://tinyurl.com/yyfxyozm) - regularization using dropout  
