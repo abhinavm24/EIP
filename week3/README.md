@@ -67,7 +67,7 @@ Accuracy on test data is: 82.68
 
 	model.add(SeparableConv2D(10, (1, 1))) #4, 18
 	model.add(BatchNormalization())
-	model.add(SeparableConv2D(10, (4, 4))) #1, 18
+	model.add(SeparableConv2D(10, (4, 4))) #1, 30
 	model.add(GlobalAveragePooling2D())
 	model.add(Activation('softmax'))
 	Model: "sequential_9"
