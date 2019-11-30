@@ -1,25 +1,25 @@
 # Assignment 3
 Run this (Links to an external site.) network (base network) for 50 epochs, report Validation Accuracy after 50 epochs.  
 Add new cells at the bottom of the code, and write your own network such that:  
-    it uses depthwise separable convolution ONLY (no Conv2D)  
-    it uses BatchNormalization  
-    has less than 100,000 parameters  
-    it uses proper dropout values  
-    you've mentioned the output size for each layer  
-    you've mentioned the receptive field for each layer  
-    runs for 50 epochs  
-    beats the validation score within 50 epochs (at any epoch run, doesn't need to be final one)  
-    Submit the github link  
+	it uses depthwise separable convolution ONLY (no Conv2D)  
+	it uses BatchNormalization  
+	has less than 100,000 parameters  
+	it uses proper dropout values  
+	you've mentioned the output size for each layer  
+	you've mentioned the receptive field for each layer  
+	runs for 50 epochs  
+	beats the validation score within 50 epochs (at any epoch run, doesn't need to be final one)  
+	Submit the github link  
 Your github links must have:  
-    Assignment 3.ipynb file with your code as well as logs for both the models  
-    ReadMe.md which should have:  
-    Final Validation accuracy for Base Network  
-    Your model definition (model.add... ) with output channel size and receptive field  
-    Your 50 epoch log  
+	Assignment 3.ipynb file with your code as well as logs for both the models  
+	ReadMe.md which should have:  
+	Final Validation accuracy for Base Network  
+	Your model definition (model.add... ) with output channel size and receptive field  
+	Your 50 epoch log  
 
 
-Notebook url: https://github.com/abhinavm24/EIP/blob/master/week3/assignment/Assignment_6-solution.ipynb
-Colab url: https://colab.research.google.com/github/abhinavm24/EIP/blob/master/week3/assignment/Assignment_6-solution.ipynb 
+Notebook url: https://github.com/abhinavm24/EIP/blob/master/week3/assignment/Assignment_6-solution.ipynb  
+Colab url: https://colab.research.google.com/github/abhinavm24/EIP/blob/master/week3/assignment/Assignment_6-solution.ipynb  
 
 ## Baseline
 Accuracy on test data is: 82.68
@@ -70,6 +70,82 @@ Accuracy on test data is: 82.68
 	model.add(SeparableConv2D(10, (4, 4))) #1, 18
 	model.add(GlobalAveragePooling2D())
 	model.add(Activation('softmax'))
+	Model: "sequential_9"
+
+_________________________________________________________________
+	Layer (type)                 Output Shape              Param #   
+	=================================================================
+	separable_conv2d_63 (Separab (None, 30, 30, 32)        123       
+	_________________________________________________________________
+	activation_64 (Activation)   (None, 30, 30, 32)        0         
+	_________________________________________________________________
+	batch_normalization_50 (Batc (None, 30, 30, 32)        128       
+	_________________________________________________________________
+	dropout_55 (Dropout)         (None, 30, 30, 32)        0         
+	_________________________________________________________________
+	separable_conv2d_64 (Separab (None, 28, 28, 64)        2336      
+	_________________________________________________________________
+	activation_65 (Activation)   (None, 28, 28, 64)        0         
+	_________________________________________________________________
+	batch_normalization_51 (Batc (None, 28, 28, 64)        256       
+	_________________________________________________________________
+	dropout_56 (Dropout)         (None, 28, 28, 64)        0         
+	_________________________________________________________________
+	separable_conv2d_65 (Separab (None, 26, 26, 128)       8768      
+	_________________________________________________________________
+	activation_66 (Activation)   (None, 26, 26, 128)       0         
+	_________________________________________________________________
+	batch_normalization_52 (Batc (None, 26, 26, 128)       512       
+	_________________________________________________________________
+	max_pooling2d_18 (MaxPooling (None, 13, 13, 128)       0         
+	_________________________________________________________________
+	dropout_57 (Dropout)         (None, 13, 13, 128)       0         
+	_________________________________________________________________
+	separable_conv2d_66 (Separab (None, 13, 13, 32)        4224      
+	_________________________________________________________________
+	activation_67 (Activation)   (None, 13, 13, 32)        0         
+	_________________________________________________________________
+	batch_normalization_53 (Batc (None, 13, 13, 32)        128       
+	_________________________________________________________________
+	dropout_58 (Dropout)         (None, 13, 13, 32)        0         
+	_________________________________________________________________
+	separable_conv2d_67 (Separab (None, 11, 11, 128)       4384      
+	_________________________________________________________________
+	activation_68 (Activation)   (None, 11, 11, 128)       0         
+	_________________________________________________________________
+	batch_normalization_54 (Batc (None, 11, 11, 128)       512       
+	_________________________________________________________________
+	dropout_59 (Dropout)         (None, 11, 11, 128)       0         
+	_________________________________________________________________
+	separable_conv2d_68 (Separab (None, 9, 9, 256)         33920     
+	_________________________________________________________________
+	activation_69 (Activation)   (None, 9, 9, 256)         0         
+	_________________________________________________________________
+	batch_normalization_55 (Batc (None, 9, 9, 256)         1024      
+	_________________________________________________________________
+	dropout_60 (Dropout)         (None, 9, 9, 256)         0         
+	_________________________________________________________________
+	max_pooling2d_19 (MaxPooling (None, 4, 4, 256)         0         
+	_________________________________________________________________
+	dropout_61 (Dropout)         (None, 4, 4, 256)         0         
+	_________________________________________________________________
+	separable_conv2d_69 (Separab (None, 4, 4, 64)          16640     
+	_________________________________________________________________
+	activation_70 (Activation)   (None, 4, 4, 64)          0         
+	_________________________________________________________________
+	separable_conv2d_70 (Separab (None, 4, 4, 10)          714       
+	_________________________________________________________________
+	batch_normalization_56 (Batc (None, 4, 4, 10)          40        
+	_________________________________________________________________
+	separable_conv2d_71 (Separab (None, 1, 1, 10)          270       
+	_________________________________________________________________
+	global_average_pooling2d_7 ( (None, 10)                0         
+	_________________________________________________________________
+	activation_71 (Activation)   (None, 10)                0         
+	=================================================================
+	Total params: 73,979
+	Trainable params: 72,679
+	Non-trainable params: 1,300
 
 
 ## Training
