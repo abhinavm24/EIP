@@ -2,6 +2,8 @@
 
 Notebook - https://github.com/abhinavm24/EIP/blob/master/week5/PersonAttributes.ipynb
 
+Colab run - https://colab.research.google.com/github/abhinavm24/EIP/blob/master/week5/PersonAttrubutes.ipynb
+
 # Best epoch
 
     Epoch 61/100
